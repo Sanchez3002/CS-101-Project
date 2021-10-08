@@ -16,14 +16,14 @@ def s(dna):
 #2
 def dna2rna(dna):
     rna = ""
-    for symbol in dna:
-        if symbol == "A":
+    for i in dna:
+        if i == "A":
             rna = rna + "A"
-        elif symbol == "T":
+        elif i == "T":
             rna = rna + "U"
-        elif symbol == "G":
+        elif i == "G":
             rna = rna + "G"
-        elif symbol == "C":
+        elif i == "C":
             rna = rna + "C"
     return rna
    
@@ -32,14 +32,14 @@ def reverse_complement(dna):
     dna_list = list( dna.upper() )
     dna_list.reverse()
     dna_comp = ""
-    for letter in dna_list:
-        if letter == "A":
+    for i in dna_list:
+        if i == "A":
             dna_comp += "T"
-        elif letter == "T":
+        elif i == "T":
             dna_comp += "A"
-        elif letter == "G":
+        elif i == "G":
             dna_comp += "C"
-        elif letter == "C":
+        elif i == "C":
             dna_comp += "G"
     return dna_comp
    
