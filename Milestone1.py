@@ -84,3 +84,22 @@ def mendels_law( hom, het, rec ):
     for key in p_of_alleles:
         total_prob += p_of_alleles[ key ] * p_of_comb[ key ]
     return total_prob
+
+#6
+def GC_content(dna_list):
+    content_list = []
+    for dna_string in dna_list:
+        count_AT = 0 
+        count_GC = 0
+        dna_string = dna_string.upper()
+        for letter in dna_string:
+            if letter == "G" or letter == "C":
+                count_GC += 1 
+            elif letter == "A" or letter == "T":
+                count_AT += 1 
+        content_list.append(count_GC / (count_AT + count_GC) * 100)
+    highest = content_list[0] #find string with highest gc_content
+    for content in content_list:
+        if content > highest:
+            highest = content 
+    return (content_list.index(highest), highest)
