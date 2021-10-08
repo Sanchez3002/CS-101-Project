@@ -114,7 +114,7 @@ def locate_substring( dna_snippet, dna ):
     for i in range( len ( dna ) ):
         if dnaC[ i : i + len( dna_snippet ) ] == dna_snippet.upper():
             position.append( i )
-    return poition
+    return position
 
 #9
 def hamming_dist(dna1,dna2):
