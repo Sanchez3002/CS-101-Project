@@ -108,6 +108,37 @@ def GC_content( dna_list ):
             highest = content 
     return (content_list.index(highest), highest)
 
+#7
+def rna2codon(rna):
+    if rna == "":
+        return ""
+        
+    genetic_codon = {
+        'UUU': 'F', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L',        'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L',
+        'AUU': 'I', 'AUC': 'I', 'AUA': 'I', 'AUG': 'M',        'GUU': 'V', 'GUC': 'V', 'GUA': 'V', 'GUG': 'V',
+
+        'UCU': 'S', 'UCC': 'S', 'UCA': 'S', 'UCG': 'S',        'CCU': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P',
+        'ACU': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T',        'GCU': 'A', 'GCC': 'A', 'GCA': 'A', 'GCG': 'A',
+
+        'UAU': 'Y', 'UAC': 'Y', 'UAA': '*', 'UAG': '*',        'CAU': 'H', 'CAC': 'H', 'CAA': 'Q', 'CAG': 'Q',
+        'AAU': 'N', 'AAC': 'N', 'AAA': 'K', 'AAG': 'K',        'GAU': 'D', 'GAC': 'D', 'GAA': 'E', 'GAG': 'E',
+
+        'UGU': 'C', 'UGC': 'C', 'UGA': '*', 'UGG': 'W',        'CGU': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R',
+        'AGU': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R',        'GGU': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G',
+    }
+   
+    output = ""
+    stop = False
+    i=0
+    while not stop:
+        codon_string = rna[i: i + 3]
+        if genetic_codon[codon_string] == '*':
+            stop = True
+            continue
+        output += genetic_codon[codon_string]
+        i+=3
+    return output
+
 #8
 def locate_substring( dna_snippet, dna ):
     dnaC = dna.upper()
@@ -127,6 +158,26 @@ def hamming_dist(dna1,dna2):
         else:
             i += 1
     return count
+
+#10
+def count_dom_phenotype(genotypes):
+    return (2 * genotypes[0]) + (2 * genotypes[1]) + (2 * genotypes[2]) + ((3/2) * genotypes[3]) + (genotypes[4])
+
+#11
+def source_rna(protein):
+    to_return = 3   # =3 since stop = 3
+    reference_dict = {
+        'F': 2, 'L': 6, 'I': 3, 
+        'M': 1, 'S': 6, 'T': 4, 
+        'Y': 2, 'N': 2, 'K': 2, 
+        'C': 2, 'W': 1, 'R': 6,
+        'A': 4, 'P': 4, 'H': 2,
+        'Q': 2, 'V': 4, 'G': 4,
+        'E': 2, 'D': 2
+    }
+    for c in protein:
+        to_return = to_return * reference_dict[c]
+    return to_return
 
 #12
 def splice_rna( dna, intron_list ):
