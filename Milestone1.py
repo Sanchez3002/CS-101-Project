@@ -82,6 +82,11 @@ def mendels_law( hom, het, rec ):
     for key in p_of_alleles:
         total_prob += p_of_alleles[ key ] * p_of_comb[ key ]
     return total_prob
+#5
+def fibonacci_rabbit(n, k): 
+    if n < 2:
+        return 1
+    return k*fibonacci_rabbit(n-2, k) + fibonacci_rabbit(n-1, k)
 
 #6
 def GC_content(dna_list):
@@ -101,3 +106,14 @@ def GC_content(dna_list):
         if content > highest:
             highest = content 
     return (content_list.index(highest), highest)
+
+#9
+def hamming_dist(dna1,dna2):
+    i=0
+    count = 0
+    for i in range(0,len(dna1)):
+        if dna1[i] != dna2[i]:
+            count+=1
+        else:
+            i+=1
+    return count
