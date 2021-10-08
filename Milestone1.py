@@ -29,7 +29,7 @@ def dna2rna(dna):
    
 #3
 def reverse_complement(dna):
-    dna_list = 'dna'
+    dna_list = list( dna.upper() )
     dna_list.reverse()
     dna_comp = ""
     for letter in dna_list:
