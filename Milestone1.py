@@ -29,6 +29,9 @@ def dna2rna(dna):
    
 #3
 def reverse_complement(dna):
+    '''
+    TTTGTCTAGTGG
+    '''
     dna_list.reverse
     dna_comp = ""
     for letter in dna_list:
