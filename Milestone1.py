@@ -58,11 +58,11 @@ def mendels_law( hom, het, rec ):
         "recrec" : 0
     }
     p_of_comb = {
-        "hethet" : 3 / 4
-        "hethom" : 1
-        "hetrec" : 1 / 2
-        "homhom" : 1
-        "homrec" : 1
+        "hethet" : 3 / 4,
+        "hethom" : 1,
+        "hetrec" : 1 / 2,
+        "homhom" : 1,
+        "homrec" : 1,
         "recrec" : 0
     }
     if total < 2:
