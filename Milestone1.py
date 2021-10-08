@@ -126,3 +126,11 @@ def hamming_dist(dna1,dna2):
         else:
             i+=1
     return count
+
+#12
+def splice_rna( dna, intron_list ):
+    for i in intron_list:
+        dna = dna.replace( intron, '' )
+    rna = dna2rna(dna)
+    protein = rna2codon( rna )
+    return = protein
