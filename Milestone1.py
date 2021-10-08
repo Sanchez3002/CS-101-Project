@@ -107,6 +107,15 @@ def GC_content(dna_list):
             highest = content 
     return (content_list.index(highest), highest)
 
+#8
+def locate_substring( dna_snippet, dna ):
+    dnaC = dna.upper()
+    position = []
+    for i in range( len ( dna ) ):
+        if dnaC[ i : i + len( dna_snippet ) ] == dna_snippet.upper():
+            position.append( i )
+    return poition
+
 #9
 def hamming_dist(dna1,dna2):
     i=0
