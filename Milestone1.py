@@ -83,10 +83,10 @@ def mendels_law( hom, het, rec ):
         total_prob += p_of_alleles[ key ] * p_of_comb[ key ]
     return total_prob
 #5
-def fibonacci_rabbits(n, k): 
-    if n < 2:
+def fibonacci_rabbits( n, k ): 
+    if n <= 2:
         return 1
-    return k*fibonacci_rabbits(n-2, k) + fibonacci_rabbits(n-1, k)
+    return k * fibonacci_rabbits( n - 2, k ) + fibonacci_rabbits( n - 1, k )
 
 #6
 def GC_content(dna_list):
