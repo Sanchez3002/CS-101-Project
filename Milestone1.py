@@ -30,7 +30,7 @@ def dna2rna(dna):
 #3
 def reverse_complement(dna):
     dna_list = ''
-    dna_list.reverse
+    dna_list.reverse()
     dna_comp = ""
     for letter in dna_list:
         if letter == "A":
