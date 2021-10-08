@@ -2,14 +2,14 @@
 def s(dna):
     dna = dna.upper()
     count_A = dna.count('A')
-    count_C = dna.count('C')
-    count_G = dna.count('G')
     count_T = dna.count('T')
+    count_G = dna.count('G')
+    count_C = dna.count('C')
     dna_dict = {
         "A" : count_A,
-        "C" : count_C,
+        "T" : count_T,
         "G" : count_G,
-        "T" : count_T
+        "C" : count_C
     }
     return dna_dict
     
@@ -82,6 +82,7 @@ def mendels_law( hom, het, rec ):
     for key in p_of_alleles:
         total_prob += p_of_alleles[ key ] * p_of_comb[ key ]
     return total_prob
+
 #5
 def fibonacci_rabbits( n, k ): 
     if n <= 2:
@@ -89,7 +90,7 @@ def fibonacci_rabbits( n, k ):
     return k * fibonacci_rabbits( n - 2, k ) + fibonacci_rabbits( n - 1, k )
 
 #6
-def GC_content(dna_list):
+def GC_content( dna_list ):
     content_list = []
     for dna_string in dna_list:
         count_AT = 0 
@@ -100,7 +101,7 @@ def GC_content(dna_list):
                 count_GC += 1 
             elif letter == "A" or letter == "T":
                 count_AT += 1 
-        content_list.append(count_GC / (count_AT + count_GC) * 100)
+        content_list.append( count_GC / ( count_AT + count_GC ) * 100 )
     highest = content_list[0] #find string with highest gc_content
     for content in content_list:
         if content > highest:
@@ -118,21 +119,19 @@ def locate_substring( dna_snippet, dna ):
 
 #9
 def hamming_dist(dna1,dna2):
-    i=0
+    i = 0
     count = 0
-    for i in range(0,len(dna1)):
-        if dna1[i] != dna2[i]:
-            count+=1
+    for i in range( 0, len ( dna1 ) ):
+        if dna1[ i ] != dna2[ i ]:
+            count += 1
         else:
-            i+=1
+            i += 1
     return count
-
-def rna2codon(rna):
 
 #12
 def splice_rna( dna, intron_list ):
     for intron in intron_list:
         dna = dna.replace( intron, '' )
-    rna = dna2rna(dna)
+    rna = dna2rna( dna )
     protein = rna2codon( rna )
     return protein
