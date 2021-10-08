@@ -43,7 +43,7 @@ def reverse_complement(dna):
     return dna_comp
    
 #4
-def mendels_law( hom, het, rec )
+def mendels_law( hom, het, rec ):
     import math
     def comb( n, k ):
         return math.factorial( n ) / math.factorial( k ) / math.factorial( n - k )
