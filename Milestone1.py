@@ -133,4 +133,4 @@ def splice_rna( dna, intron_list ):
         dna = dna.replace( intron, '' )
     rna = dna2rna(dna)
     protein = rna2codon( rna )
-    return = protein
+    return protein
