@@ -183,6 +183,6 @@ def source_rna(protein):
 def splice_rna( dna, intron_list ):
     for i in intron_list:
         dna = dna.replace( i, '' )
-    pro = rna2codon( rna )
     rna = dna2rna( dna )
+    pro = rna2codon( rna )
     return pro
