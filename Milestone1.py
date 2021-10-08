@@ -1,5 +1,5 @@
 #1
-def dna_count(dna):
+def s(dna):
     dna = dna.upper()
     count_A = dna.count('A')
     count_C = dna.count('C')
@@ -29,9 +29,7 @@ def dna2rna(dna):
    
 #3
 def reverse_complement(dna):
-    '''
-    TTTGTCTAGTGG
-    '''
+    dna_list = ''
     dna_list.reverse
     dna_comp = ""
     for letter in dna_list:
